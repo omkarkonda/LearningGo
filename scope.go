@@ -11,4 +11,15 @@ func omk() {
 		return x
 	}
 	fmt.Println(func1())
+
+	wrapper := wrapperFunc()
+	wrapper()
+}
+
+func wrapperFunc() func() int {
+	x := 6
+
+	return func() int {
+		return x
+	}
 }
